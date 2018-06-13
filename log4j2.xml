@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR" strict="true" name="kd_callerConfig" packages="com.gnoxy.kd_caller">
+  <Properties>
+    <Property name="filename">logs/kd_caller.log</Property>
+  </Properties>
+  <Appenders>
+    <Appender type="Console" name="STDOUT">
+      <Layout type="PatternLayout" pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+    </Appender>
+    <Appender type="File" name="File" fileName="${filename}">
+      <Layout type="PatternLayout">
+        <Pattern>%d %p %C [%t] %m%n</Pattern>
+      </Layout>
+    </Appender>
+  </Appenders>
+  <Loggers>
+    <Root level="INFO">
+        <AppenderRef ref="STDOUT"/>
+    </Root>
+    <Logger name="com.gnoxy.kd_caller.Main" level="INFO">
+    </Logger>
+  </Loggers>
+</Configuration>
